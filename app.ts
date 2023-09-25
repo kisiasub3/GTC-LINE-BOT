@@ -1,6 +1,6 @@
 import express from "express"
 import http from "http"
-import line from "@line/bot-sdk"
+import {Client} from "@line/bot-sdk"
 import {TextMessage} from "@line/bot-sdk"
 const app = express()
 const server = http.createServer(app)
@@ -14,7 +14,7 @@ const config = {
     channelSecret:"Ac1Cxy/XBo5PnTRimyGfOXKoRRys5T4EouYGi2Edrsxt/5uFpZy5rYphNmu9TJ0UyjtPDSgV3Z5f8x01HSs+pGrCKkTsiC99J8p50H9HRa9RppDHinzcqhhQIuTVUUSc6H1DQWicvryy29hL0zyzmgdB04t89/1O/w1cDnyilFU=",
     channelAccessToken:"a0a95804e41131afa6b7342053060f5e"
 }
-const client = new line.Client(config)
+const client = new Client(config)
 const sendMess = async()=>{
     const messages:TextMessage = {
         type: 'text',
